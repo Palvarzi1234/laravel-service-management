@@ -1,5 +1,5 @@
 * coding the page
-resource/view/
+- resource/view/
 
 
 * coding the model
@@ -7,4 +7,4 @@ resource/view/
 * coding the controller
 
 * coding the routes
-routes/web.php
+- routes/web.php
