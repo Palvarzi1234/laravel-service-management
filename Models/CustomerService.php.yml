@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Service extends Model
+{
+    protected $fillable = [
+        'customer_name', 'customer_phone', 'customer_address', 'description', 'status', 'technician_id',
+    ];
+
+    public function technician()
+    {
+        return $this->belongsTo(Technician::class);
+    }
+}
