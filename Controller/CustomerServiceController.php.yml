@@ -1,0 +1,53 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests\CustomerServiceRequest;
+use App\Http\Requests\TechnicalRequest;
+use App\Repositories\CustomerServiceRepository;
+use App\Repositories\ServiceRepository;
+use App\Repositories\TechnicalRepository;
+use Illuminate\Http\Request;
+
+class CustomerServiceController extends Controller
+{
+    protected $customerServiceRepo;
+    protected $serviceRepo;
+    
+    public function __construct(
+        CustomerServiceRepository $customerServiceRepo,
+        ServiceRepository $serviceRepo
+    ) {
+        $this->customerServiceRepo = $customerServiceRepo;
+        $this->serviceRepo = $serviceRepo;
+    }
+    
+    public function index()
+    {
+        $services = $this->serviceRepo->getAll();
+        return view('customer_service.index', compact('services'));
+    }
+    
+    public function create()
+    {
+        return view('customer_service.create');
+    }
+    
+    public function store(CustomerServiceRequest $request)
+    {
+        $this->customerServiceRepo->create($request->all());
+        return redirect()->route('customer_service.index')->with('success', 'Service created successfully');
+    }
+    
+    public function edit($id)
+    {
+        $service = $this->serviceRepo->find($id);
+        return view('customer_service.edit', compact('service'));
+    }
+    
+    public function update(CustomerServiceRequest $request, $id)
+    {
+        $this->customerServiceRepo->update($id, $request->all());
+        return redirect()->route('customer_service.index')->with('success', 'Service updated successfully');
+    }
+}
