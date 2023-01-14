@@ -1,0 +1,29 @@
+    public function create($data)
+    {
+        $service = new Service($data);
+        $service->save();
+        return $service;
+    }
+
+    public function update($id, $data)
+    {
+        $service = Service::find($id);
+        $service->fill($data);
+        $service->save();
+        return $service;
+    }
+
+    public function assignTechnician($serviceId, $technicianId)
+    {
+        $service = Service::find($serviceId);
+        $service->technician_id = $technicianId;
+        $service->save();
+    }
+
+    public function unassignTechnician($serviceId)
+    {
+        $service = Service::find($serviceId);
+        $service->technician_id = null;
+        $service->save();
+    }
+}
