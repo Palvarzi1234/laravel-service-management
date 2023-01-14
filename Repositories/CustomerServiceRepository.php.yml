@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Repositories;
+
+use App\Models\Service;
+use App\User\CustomerService;
+
+class CustomerServiceRepository
+{
+    public function create($data)
+    {
+        $service = new Service($data);
+        $service->save();
+        return $service;
+    }
+
+    public function update($id, $data)
+    {
+        $service = Service::find($id);
+        $service->fill($data);
+        $service->save();
+        return $service;
+    }
+
+    public function updateProfile($id, $data)
+    {
+        $user = CustomerService::find($id);
+        $user->fill($data);
+        $user->save();
+        return $user;
+    }
+}
