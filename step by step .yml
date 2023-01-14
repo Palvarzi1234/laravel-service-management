@@ -1,7 +1,23 @@
-Jalankan composer create-project --prefer-dist laravel/laravel service-management di git bash
+- instal vs code
 
-Buka project melalui vs code lalu buka terminal jalankan composer require jeroennoten/laravel-adminlte
+- install git client
 
-php artisan adminlte:install
- 
+- xampp
+
+- node js /npm
+
+- php (7.3 minimum)
+
+- and composer
+
+composer create-project --prefer-dist laravel/laravel="^8" servis-partner
+
+cd servis-partner
+
+
+php artisan migrate (tapi bikin databasenya dulu)
+
+php artisan serve (buat ngejalanin)
+
+framework yang bakal dipake adalah laravel versi 8 dan template SB Admin
 
