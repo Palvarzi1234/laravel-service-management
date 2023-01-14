@@ -1,0 +1,5 @@
+The CustomerServiceRequest is used to validate the input data when creating or updating a service. it checks that the customer name, phone, address and description fields are required and that they are strings with a maximum length of 255 characters.
+
+The TechnicalRequest is used to validate the input data when updating the status of a service. it checks that the status field is required and that it is one of the three allowed values: pending, in_progress, completed.
+
+The ProfileRequest is used to validate the input data when updating the profile of a user. It checks that the name, email and password fields are required and that the email is unique and formatted correctly.
