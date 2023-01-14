@@ -1,0 +1,3 @@
+The Service model defines the structure of a service and the relationship between the service and the technician. It has several fillable properties such as customer_name, customer_phone, customer_address, description, status and technician_id. The relationship is defined by the technician() method which returns the technician that belongs to a service.
+
+The Technician model defines the structure of a technician and the relationship between the technician and the services. It has several fillable properties such as name and email. The relationship is defined by the services() method which returns all services that belong to a technician.
