@@ -14,3 +14,15 @@ class TechnicalMiddleware
         return redirect()->route('login');
     }
 }
+
+
+-------------------------------------
+Both of these middlewares are very similar, the main difference is that they check if the user is logged in and if the user's role is 'customer_service' or 'technical' respectively. If the check passes, the user will be allowed to access the requested resource, otherwise, the user will be redirected to the login page.
+
+You can also create middleware for specific routes that you want to protect. For example if you want to protect all routes that start with /technical
+
+
+Route::middleware(['technical'])->group(function () {
+    Route::get('/technical', [TechnicalController::class, 'index']);
+    Route::put('/technical/{id}', [TechnicalController::class, 'updateStatus']);
+});
