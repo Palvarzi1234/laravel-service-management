@@ -1,0 +1,47 @@
+<!-- views/technical/services.blade.php -->
+
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Services</div>
+
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Customer Name</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($services as $service)
+                                <tr>
+                                    <td>{{ $service->id }}</td>
+                                    <td>{{ $service->customer_name }}</td>
+                                    <td>{{ $service->description }}</td>
+                                    <td>{{ $service->status }}</td>
+                                    <td>
+                                        <a href="{{ route('technical.services.edit', $service->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                                        <form style="display:inline-block" action="{{ route('technical.services.destroy', $service->id) }}" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
