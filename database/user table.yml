@@ -1,0 +1,17 @@
+php artisan make:migration create_users_table
+
+
+This command will create a new migration file in the database/migrations directory, you can open the file and add the following code:
+
+public function up()
+{
+    Schema::create('users', function (Blueprint $table) {
+        $table->id();
+        $table->string('name');
+        $table->string('email')->unique();
+        $table->string('password');
+        $table->enum('role', ['customer_service', 'technical']);
+        $table->rememberToken();
+        $table->timestamps();
+    });
+}
