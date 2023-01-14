@@ -1,0 +1,2 @@
+This view is for editing a service, it has a form that takes input for customer name, phone, address, and description and submit it to the server. it also uses the old() function to keep the input value after validation fails, and @error to show the validation errors that occur and @method('PUT') to specify that this form will submit a PUT request to update the service.
+Please let me know if there's anything else I can help you with.
