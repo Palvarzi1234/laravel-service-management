@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Repositories;
+
+use App\Models\Service;
+
+class ServiceRepository
+{
+    public function getAll()
+    {
+        return Service::all();
+    }
+
+    public function find($id)
+    {
+        return Service::find($id);
