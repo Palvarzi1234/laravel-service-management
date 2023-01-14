@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Repositories;
+
+use App\Models\Service;
+use App\Models\Technician;
+use App\User\Technical;
+
+class TechnicalRepository
+{
+    public function updateStatus($id, $data)
+    {
+        $service = Service::find($id);
+        $service->fill($data);
+        $service->save();
+        return $service;
+    }
+
+   
