@@ -1,62 +1,50 @@
--root
-  |- app
-    |- Http
-      |- Controllers
-        |- CustomerServiceController.php
-        |- TechnicalController.php
-        |- Auth
-          |- LoginController.php
-          |- RegisterController.php
-      |- Middleware
-        |- RoleMiddleware.php
-      |- Requests
-        |- ServiceRequest.php
-    |- Providers
-      |- AppServiceProvider.php
-    |- Models
-      |- User.php
-      |- Product.php
-      |- ProductMovement.php
-  |- config
-  |- database
-    |- migrations
-      |- create_users_table.php
-      |- create_products_table.php
-      |- create_products_movements_table.php
-    |- seeds
-      |- UsersTableSeeder.php
-      |- ProductsTableSeeder.php
-      |- ProductsMovementsTableSeeder.php
-  |- public
-    |- assets
-      |- css
-      |- js
-      |- images
-  |- resources
-    |- views
-      |- auth
-        |- login.blade.php
-        |- register.blade.php
-      |- customer_service
-        |- index.blade.php
-        |- create.blade.php
-        |- update.blade.php
-      |- technical
-        |- index.blade.php
-        |- update.blade.php
-      |- dashboard
-        |- costumer.blade.php
-        |- stock.blade.php
-        |- recap.blade.php
-    |- lang
-  |- routes
-    |- web.php
-    |- api.php
-  |- storage
-  |- tests
-  |- vendor
-  |- .env
-  |- .gitignore
-  |- README.md
-  |- composer.json
-  |- package.json
+- app
+    - Http
+        - Controllers
+            - CustomerServiceController.php (for handling customer service related tasks)
+            - TechnicalController.php (for handling technical related tasks)
+        - Middleware (for handling user roles and authentication)
+            - CustomerServiceMiddleware.php
+            - TechnicalMiddleware.php
+        - Requests (for form validation)
+            - CustomerServiceRequest.php
+            - TechnicalRequest.php
+    - User (for handling user management)
+        - Models
+            - CustomerService.php
+            - Technical.php
+        - Repositories
+            - CustomerServiceRepository.php
+            - TechnicalRepository.php
+    - Service (for handling service management)
+        - Models
+            - Service.php
+        - Repositories
+            - ServiceRepository.php
+
+- resources
+    - views (for storing blade templates)
+        - customer_service
+            - create.blade.php
+            - edit.blade.php
+            - index.blade.php
+        - technical
+            - create.blade.php
+            - edit.blade.php
+            - index.blade.php
+        - services
+            - index.blade.php
+            - show.blade.php
+- public (for storing assets such as CSS and JS files)
+    - css
+        - bootstrap.min.css
+    - js
+        - bootstrap.min.js
+    - sb-admin
+        - css
+            -sb-admin.min.css
+        - js
+            -sb-admin.min.js
+- routes
+    - web.php (for handling web routes)
+    - api.php (for handling API routes)
