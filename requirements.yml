@@ -1,0 +1,16 @@
+Here are some of the software that you might need to work on your Laravel project:
+
+* PHP: Laravel is built on PHP, so you will need to have a version of PHP that is compatible with the version of Laravel you are using. The latest version of Laravel (8.x) requires PHP 7.3 or later. You can check your current version of PHP by running the command php -v in the terminal.
+
+* Composer: Composer is a dependency manager for PHP, it is used to manage the packages and dependencies that your Laravel project needs. You can download the latest version of Composer from the official website.
+
+* Web Server: Laravel's built-in development server is useful for testing, but for production environments you'll need to use a web server like Apache or Nginx.
+
+* Database Server: Laravel supports several database management systems, including MySQL, PostgreSQL, and SQLite. You will need to have one of these servers installed and configured on your development machine.
+
+* Text Editor or IDE: You will need a text editor or an IDE (Integrated Development Environment) to write your code. Some popular choices include Visual Studio Code, Sublime Text, and PhpStorm.
+
+* Git : Git is a version control software that allows you to track changes to your project and collaborate with other developers.
+
+* Node.js and npm: Node.js and npm (Node Package Manager) are used to manage the JavaScript packages that your Laravel project needs. Some of the packages are used for development, such as Laravel Mix, and others are used for production, such as Vue.js.
+*Visual Studio code
