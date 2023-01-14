@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests\TechnicalRequest;
+use App\Repositories\ServiceRepository;
+use App\Repositories\TechnicalRepository;
+use Illuminate\Http\Request;
+
+class TechnicalController extends Controller
+{
+    protected $technicalRepo;
+    protected $serviceRepo;
+
+    public function __construct(
+        TechnicalRepository $technicalRepo,
+        ServiceRepository $serviceRepo
+    ) {
+        $this->technicalRepo = $technicalRepo;
+        $this->serviceRepo = $serviceRepo;
+    }
+
+    public function index()
+    {
+        $services = $this->serviceRepo->getAll();
+        return view('technical.index', compact('services'));
+    }
+
+    public function updateStatus(TechnicalRequest $request, $id)
+    {
+        $this->technicalRepo->updateStatus($id, $request->all());
+        return redirect()->route('technical.index')->with('success', 'Service status updated successfully');
+    }
+}
