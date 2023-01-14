@@ -1,0 +1,17 @@
+php artisan make:migration create_technical_table
+
+Then you can open the newly created migration file and add the necessary fields and constraints to the table, for example:
+
+public function up()
+{
+    Schema::create('technical', function (Blueprint $table) {
+        $table->id();
+        $table->string('name');
+        $table->string('email')->unique();
+        $table->string('specialization');
+        $table->timestamps();
+    });
+}
+
+--------------
+php artisan migrate
