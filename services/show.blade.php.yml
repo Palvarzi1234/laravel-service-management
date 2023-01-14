@@ -1,0 +1,49 @@
+<!-- views/services/show.blade.php -->
+
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">Service Details</div>
+
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <th>ID</th>
+                                <td>{{ $service->id }}</td>
+                            </tr>
+                            <tr>
+                                <th>Customer Name</th>
+                                <td>{{ $service->customer_name }}</td>
+                            </tr>
+                            <tr>
+                                <th>Customer Phone</th>
+                                <td>{{ $service->customer_phone }}</td>
+                            </tr>
+                            <tr>
+                                <th>Customer Address</th>
+                                <td>{{ $service->customer_address }}</td>
+                            </tr>
+                            <tr>
+                                <th>Description</th>
+                                <td>{{ $service->description }}</td>
+                            </tr>
+                            <tr>
+                                <th>Status</th>
+                                <td>{{ $service->status }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="{{ route('services.index') }}" class="btn btn-secondary">Back</a>
+                    <a href="{{ route('services.edit', $service->id) }}" class="btn btn-primary">Edit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+                               
