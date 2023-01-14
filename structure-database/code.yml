@@ -1,0 +1,49 @@
+users table:
+id
+name
+email
+password
+role (customer service or technical)
+created_at
+updated_at
+
+services table:
+id
+customer_name
+customer_phone
+customer_address
+description
+status (pending, in progress, completed)
+technician_id (id of the technician assigned to the service)
+created_at
+updated_at
+
+
+technicians table (if you want to store additional information about the technicians)
+id
+name
+email
+created_at
+updated_at
+
+
+
+or
+
+- users
+    - id (primary key)
+    - name
+    - email
+    - phone
+    - password
+    - role (customer_service, technical)
+    - created_at
+    - updated_at
+- services
+    - id (primary key)
+    - user_id (foreign key referencing users table)
+    - title
+    - description
+    - status (pending, complete)
+    - created_at
+    - updated_at
