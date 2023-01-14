@@ -1,0 +1,25 @@
+php artisan make:migration create_services_table
+
+This command will create a new migration file in the database/migrations directory, you can open the file and add the following code:
+
+public function up()
+{
+    Schema::create('services', function (Blueprint $table) {
+        $table->id();
+        $table->string('customer_name');
+        $table->string('customer_phone');
+        $table->string('customer_address');
+        $table->text('description');
+        $table->enum('status', ['pending', 'completed']);
+        $table->unsignedBigInteger('user_id');
+        $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        $table->timestamps();
+    });
+}
+
+-------------
+
+php artisan migrate
+
+php artisan migrate:rollback
+
