@@ -1,0 +1,26 @@
+<?php
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('home');
+});
+
+Auth::routes();
+
+Route::middleware(['auth', 'CheckRole:technical'])->group(function () {
+    Route::get('/technical', 'TechnicalController@index')->name('technical.index');
+    Route::get('/technical/{id}', 'TechnicalController@show')->name('technical.show');
+});
+
+Route::middleware(['auth', 'CheckRole:customer_service'])->group(function () {
+    Route::get('/customer_service', 'ServiceController@index')->name('customer_service.index');
+    Route::get('/customer_service/create', 'ServiceController@create')->name('customer_service.create');
+    Route::post('/customer_service', 'ServiceController@store')->name('customer_service.store');
+    Route::get('/customer_service/{id}', 'ServiceController@show')->name('customer_service.show');
+    Route::get('/customer_service/{id}/edit', 'ServiceController@edit')->name('customer_service.edit');
+    Route::put('/customer_service/{id}', 'ServiceController@update')->name('customer_service.update');
+});
+
+Route::get('/home', 'HomeController@index')->name('home');
