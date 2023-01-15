@@ -1,0 +1,16 @@
+https://stackoverflow.com/questions/26117753/laravel-5-makecontroller-creating-controller-in-app-folder-instead-of-controlle
+keyword = php artisan make:controller pathName/controllerName
+
+https://stackoverflow.com/questions/68393652/how-to-install-bootstrap-in-laravel-8
+composer create-project laravel/laravel <project>
+cd <project>
+composer req laravel/ui
+php artisan ui bootstrap --auth
+npm install bootstrap
+npm install sass
+npm install sass-loader
+npm install && npm run dev
+
+https://stackoverflow.com/questions/68393652/how-to-install-bootstrap-in-laravel-8
+keyword = composer require laravel/ui
+
